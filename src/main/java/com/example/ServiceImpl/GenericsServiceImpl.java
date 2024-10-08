@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.service.GenericsService;
 
 @Service
-public class GenericsServiceImpl implements GenericsService<Object,Object>{
+public class GenericsServiceImpl<T,U> implements GenericsService<T,U>{
 
 	@Override
 	public void genericsUsingInterface(String text) { 
@@ -17,10 +17,10 @@ public class GenericsServiceImpl implements GenericsService<Object,Object>{
 	}
 
 	@Override
-	public void genericsUsingInterface(Object t, Object u) {
+	public void genericsUsingInterface(T t, U u) {
 		System.out.println(t);
-//		U tt=u;
-		System.out.println(u);
+		U tt=u;
+		System.out.println(tt);
 	}
 
 	@Override
